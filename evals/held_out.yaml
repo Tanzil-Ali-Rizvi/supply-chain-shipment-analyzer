@@ -1,0 +1,29 @@
+# Held-out set: written before running the planner on it and never used for tuning. Reported, not gated.
+- q: What was the on-time delivery rate?
+  calls: [{tool: network_summary, args: {}}]
+- q: Summarise delivery and freight performance for me.
+  calls: [{tool: network_summary, args: {}}]
+- q: Why are warehouse shipments late so often?
+  calls: [{tool: route_comparison, args: {}}]
+- q: Compare direct drop with from-RDC fulfilment.
+  calls: [{tool: route_comparison, args: {}}]
+- q: How are deliveries to Zambia?
+  calls: [{tool: country_profile, args: {country: Zambia}}]
+- q: Haiti delivery and freight summary
+  calls: [{tool: country_profile, args: {country: Haiti}}]
+- q: What should we fix first in Uganda?
+  calls: [{tool: worklist, args: {country: Uganda}}]
+- q: Which countries have the biggest delivery problems?
+  calls: [{tool: worklist, args: {}}]
+- q: Is trucking cheaper than air?
+  calls: [{tool: freight_by_mode, args: {}}]
+- q: Which transport mode costs the most per kilogram?
+  calls: [{tool: freight_by_mode, args: {}}]
+- q: Could we cut freight costs by using ocean for big orders planned 200 days ahead?
+  calls: [{tool: mode_shift_scenario, args: {min_plan_days: 200.0}}]
+- q: How late does Abbott ship?
+  calls: [{tool: vendor_profile, args: {vendor: ABBVIE LOGISTICS (FORMERLY ABBOTT LOGISTICS BV)}}]
+- q: Is S. Buys a reliable supplier?
+  calls: [{tool: vendor_profile, args: {vendor: S. BUYS WHOLESALER}}]
+- q: What is the average delay when a shipment is late?
+  calls: [{tool: network_summary, args: {}}]

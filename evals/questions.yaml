@@ -1,0 +1,49 @@
+# Build set: the planner was developed against these. Gated in CI (all must pass).
+- q: How did the supply chain perform overall?
+  calls: [{tool: network_summary, args: {}}]
+- q: Give me the headline numbers.
+  calls: [{tool: network_summary, args: {}}]
+- q: What share of shipments arrived on time?
+  calls: [{tool: network_summary, args: {}}]
+- q: Is the warehouse route slower than direct shipping?
+  calls: [{tool: route_comparison, args: {}}]
+- q: Do RDC deliveries run late more often?
+  calls: [{tool: route_comparison, args: {}}]
+- q: Should we ship direct from vendors instead of from regional distribution centres?
+  calls: [{tool: route_comparison, args: {}}]
+- q: How is Mozambique doing?
+  calls: [{tool: country_profile, args: {country: Mozambique}}]
+- q: Tell me about Ivory Coast
+  calls: [{tool: country_profile, args: {country: "Côte d'Ivoire"}}]
+- q: Delivery performance in the DRC
+  calls: [{tool: country_profile, args: {country: "Congo, DRC"}}]
+- q: How does South Africa compare?
+  calls: [{tool: country_profile, args: {country: South Africa}}]
+- q: Which lanes in Nigeria are worst?
+  calls: [{tool: worklist, args: {country: Nigeria}}]
+- q: Where should we act first?
+  calls: [{tool: worklist, args: {}}]
+- q: Which lanes deliver the most stock late?
+  calls: [{tool: worklist, args: {}}]
+- q: Rank the worst delivery lanes
+  calls: [{tool: worklist, args: {}}]
+- q: What does freight cost by mode?
+  calls: [{tool: freight_by_mode, args: {}}]
+- q: How expensive is air freight compared with ocean?
+  calls: [{tool: freight_by_mode, args: {}}]
+- q: Are small shipments costing us too much per kg?
+  calls: [{tool: freight_by_mode, args: {}}]
+- q: How much would we save moving heavy air freight to ocean?
+  calls: [{tool: mode_shift_scenario, args: {}}]
+- q: What if we shifted air shipments over 2,000 kg planned 150 days ahead?
+  calls: [{tool: mode_shift_scenario, args: {min_kg: 2000.0, min_plan_days: 150.0}}]
+- q: Savings if shipments above 5 t went by sea
+  calls: [{tool: mode_shift_scenario, args: {min_kg: 5000.0}}]
+- q: How does Aurobindo perform?
+  calls: [{tool: vendor_profile, args: {vendor: Aurobindo Pharma Limited}}]
+- q: How reliable is Orgenics?
+  calls: [{tool: vendor_profile, args: {vendor: "Orgenics, Ltd"}}]
+- q: Is Cipla delivering on time?
+  calls: [{tool: vendor_profile, args: {vendor: CIPLA LIMITED}}]
+- q: Vendor scorecard for Strides
+  calls: [{tool: vendor_profile, args: {vendor: STRIDES ARCOLAB LIMITED}}]

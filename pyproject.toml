@@ -1,0 +1,17 @@
+[project]
+name = "supply-chain-shipment-analyzer"
+version = "1.0.0"
+description = "USAID SCMS health-commodity shipment analysis: on-time delivery, freight cost and mode shift, with a grounded supply-chain assistant and a Tableau dashboard."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 165
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

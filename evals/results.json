@@ -1,0 +1,48 @@
+{
+  "results": {
+    "tool_selection": {
+      "passed": 24,
+      "total": 24,
+      "score": 1.0,
+      "gate": 0.95
+    },
+    "grounding": {
+      "passed": 81,
+      "total": 81,
+      "score": 1.0,
+      "gate": 1.0
+    },
+    "tamper_caught": {
+      "passed": 736,
+      "total": 736,
+      "score": 1.0,
+      "gate": 1.0
+    },
+    "route_claim": {
+      "passed": 1,
+      "total": 1,
+      "score": 1.0,
+      "gate": 1.0,
+      "odds_ratio": 6.109222677675427,
+      "p_value": 0.000999000999000999,
+      "strata": 127,
+      "lines": 4836,
+      "rdc_late_rate": 0.15636077195746356,
+      "direct_late_rate": 0.047888550282977796,
+      "n_perm": 1000
+    }
+  },
+  "held_out_tool_selection": {
+    "passed": 11,
+    "total": 14,
+    "score": 0.7857142857142857
+  },
+  "misses": [],
+  "held_out_misses": [
+    "Summarise delivery and freight performance for me. -> expected [{'tool': 'network_summary', 'args': {}}], got [{'tool': 'freight_by_mode', 'args': {}}]",
+    "Is trucking cheaper than air? -> expected [{'tool': 'freight_by_mode', 'args': {}}], got [{'tool': 'mode_shift_scenario', 'args': {}}]",
+    "How late does Abbott ship? -> expected [{'tool': 'vendor_profile', 'args': {'vendor': 'ABBVIE LOGISTICS (FORMERLY ABBOTT LOGISTICS BV)'}}], got [{'tool': 'vendor_profile', 'args': {'vendor': 'Abbott GmbH & Co. KG'}}]"
+  ],
+  "tamper_collisions_skipped": 59,
+  "passed": true
+}
