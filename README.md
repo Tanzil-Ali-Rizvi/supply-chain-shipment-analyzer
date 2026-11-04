@@ -1,5 +1,6 @@
 # Supply Chain Shipment Analyzer
 
+[![Live demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tanzil-supply-chain.streamlit.app/)
 [![CI](https://github.com/Tanzil-Ali-Rizvi/supply-chain-shipment-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/Tanzil-Ali-Rizvi/supply-chain-shipment-analyzer/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11%20|%203.12%20|%203.13-blue)
 ![SQL](https://img.shields.io/badge/SQL-DuckDB-FFF000)
@@ -8,7 +9,7 @@
 
 **Where does a global health supply chain lose time and money, and what should it fix first?** An analysis of the USAID Supply Chain Management System (SCMS) delivery history: 10,324 line items in 7,030 shipments of HIV and malaria medicines and test kits to 43 countries, 2006-2015, worth $1.63B, with $68.7M of recorded freight. It includes a ranked lane work list, a mode-shift scenario, a one-page brief per country, a Tableau dashboard, and a supply-chain assistant that answers only from governed data.
 
-**Tableau dashboard:** [view on Tableau Public](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
+**Live demo:** [tanzil-supply-chain.streamlit.app](https://tanzil-supply-chain.streamlit.app/) · **Tableau dashboard:** [view on Tableau Public](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
 
 [![Tableau overview dashboard](docs/img/tableau_overview.png)](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
 
@@ -70,6 +71,8 @@
 | ![Tableau freight](docs/img/tableau_freight_vendors.png) | ![Streamlit](docs/img/executive_summary.png) |
 
 ### Streamlit app and country brief
+
+Try it live: [tanzil-supply-chain.streamlit.app](https://tanzil-supply-chain.streamlit.app/)
 
 | Delivery & lanes | Freight & mode shift |
 | --- | --- |
