@@ -3,12 +3,14 @@
 [![CI](https://github.com/Tanzil-Ali-Rizvi/supply-chain-shipment-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/Tanzil-Ali-Rizvi/supply-chain-shipment-analyzer/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11%20|%203.12%20|%203.13-blue)
 ![SQL](https://img.shields.io/badge/SQL-DuckDB-FFF000)
-![Tableau](https://img.shields.io/badge/Tableau-Public-E97627)
+[![Tableau Public](https://img.shields.io/badge/Tableau-Public%20dashboard-E97627)](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Where does a global health supply chain lose time and money, and what should it fix first?** An analysis of the USAID Supply Chain Management System (SCMS) delivery history: 10,324 line items in 7,030 shipments of HIV and malaria medicines and test kits to 43 countries, 2006-2015, worth $1.63B, with $68.7M of recorded freight. It includes a ranked lane work list, a mode-shift scenario, a one-page brief per country, a Tableau dashboard, and a supply-chain assistant that answers only from governed data.
 
-![Streamlit executive summary](docs/img/executive_summary.png)
+**Tableau dashboard:** [view on Tableau Public](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
+
+[![Tableau overview dashboard](docs/img/tableau_overview.png)](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
 
 ## What problem this solves
 
@@ -58,10 +60,14 @@
 
 ### Tableau dashboard
 
-Two dashboards: **Delivery & Freight Overview** (KPI row, late rate by year and route, top 12 lanes by value late, map of late rate by country, freight $/kg by mode) and **Freight, Vendors & Mode Shift** (cost per kg by shipment size, mode-shift saving by country, vendor scorecard).
+[Open it on Tableau Public](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview). Two dashboards: **Delivery & Freight Overview** (KPI row, late rate by year and route, top 12 lanes by value late, map of late rate by country, freight $/kg by mode) and **Freight, Vendors & Mode Shift** (cost per kg by shipment size, mode-shift saving by country, vendor scorecard).
 - **Built as code.** [`tableau/build_workbook.py`](tableau/build_workbook.py) generates the workbook XML (datasources, calculated fields, worksheets, dashboards) and it is validated against Tableau's workbook schema before opening.
 - **Governed data.** [`scripts/export_tableau.py`](scripts/export_tableau.py) writes the extract files from the same metrics layer and reconciles six headline numbers before writing; [`tableau/make_extracts.py`](tableau/make_extracts.py) turns them into Hyper extracts.
 - **Tableau calculations** reproduce the Python KPIs (on-time rate, value late, warehouse vs direct late rate, air share of freight, freight $/kg).
+
+| Freight, Vendors & Mode Shift (Tableau) | Executive summary (Streamlit) |
+| --- | --- |
+| ![Tableau freight](docs/img/tableau_freight_vendors.png) | ![Streamlit](docs/img/executive_summary.png) |
 
 ### Streamlit app and country brief
 

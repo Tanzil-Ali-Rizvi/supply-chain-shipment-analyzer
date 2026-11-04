@@ -190,8 +190,10 @@ class Sheet:
         ws_style = ("<style><style-rule element='table'><format attr='background-color' value='#ffffff' /></style-rule>"
                     "<style-rule element='worksheet'><format attr='font-family' value='Tableau Book' /><format attr='color' value='#57534e' /></style-rule>"
                     + "".join(self.extra_style) + self._palette_rule() + "</style>")
+        maps = "<mapsources><mapsource name='Tableau' /></mapsources>" if self.mark == "Multipolygon" else ""
         return (f"<worksheet name='{a(self.name)}'>{title}<table><view><datasources><datasource caption='{a(ds.caption)}' name='{ds.name}' />"
-                f"</datasources><datasource-dependencies datasource='{ds.name}'>{deps}</datasource-dependencies>{filt}{srt}"
+                f"</datasources>{maps}"
+                f"<datasource-dependencies datasource='{ds.name}'>{deps}</datasource-dependencies>{filt}{srt}"
                 f"<aggregation value='true' /></view>{ws_style}<panes><pane selection-relaxation-option='selection-relaxation-allow'>"
                 f"<view><breakdown value='auto' /></view><mark class='{self.mark}' />{enc}{label}{pane_style}</pane></panes>"
                 f"<rows>{a(self.rows)}</rows><cols>{a(self.cols)}</cols></table>"
@@ -439,6 +441,7 @@ def build(data_dir: str) -> str:
             "<ObjectModelTableType /><SchemaViewerObjectModel /><SheetIdentifierTracking /><WindowsPersistSimpleIdentifiers />"
             "</document-format-change-manifest><preferences />"
             f"<datasources>{''.join(d.xml(palettes) for d in [L, S, K, V, M])}</datasources>"
+            "<mapsources><mapsource name='Tableau' /></mapsources>"
             f"<worksheets>{''.join(s.xml() for s in sheets)}</worksheets>"
             f"<dashboards>{d1}{d2}</dashboards>"
             f"<windows source-height='30'>{windows}</windows></workbook>\n")

@@ -1,5 +1,7 @@
 # Tableau dashboard
 
+Live: [Supply Chain Shipment Analyzer on Tableau Public](https://public.tableau.com/app/profile/tanzil.ali.rizvi/viz/SupplyChainShipmentAnalyzerv4/DeliveryFreightOverview)
+
 Two dashboards built on governed extracts: **Delivery & Freight Overview** and **Freight, Vendors & Mode Shift**.
 
 | File | What it is |
